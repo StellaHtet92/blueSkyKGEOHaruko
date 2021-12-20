@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&family=Prompt:wght@200&family=Zen+Old+Mincho&display=swap');
+*{    
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Zen Old Mincho', serif;
+}
+@media (max-width: 768px) {
+    body{
+        background: #e1ecf2;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding:0;
+        overflow: auto;
+    }
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+
+}
+body{
+    background: white;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding:0;
+    overflow: hidden;
+    
+}
+.container-fluid .row .col-12 .navbar
+{   width: 100%;
+    min-height: 60px;
+    padding: 5px;
+    background-color: white;
+    top: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.container-fluid .row .col-12 .navbar .navbar-brand
+{
+    color: #2e4ead;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    display: inline-block;
+    padding-left: 10px;
+}
+.container-fluid .row .col-12 .navbar .navbar-collapse .navbar-nav li{   
+    margin: 2px 5px;
+    width: 120px;
+    color: darkblue;
+ }
+ .container-fluid .row .col-12 .navbar .navbar-collapse .navbar-nav li a{   
+    color: darkblue;
+ }
+ .container-fluid .row .col-12 .navbar .navbar-collapse .navbar-nav li .dropdown-menu
+ {
+    min-width: 100px;
+    text-decoration: none;
+    padding:0;
+ }
+ .container-fluid .row .col-12 .navbar .navbar-collapse .navbar-nav li .dropdown-menu .dropdown-item.active{   
+    background-color: skyblue;
+    
+    
+ } 
+.container-fluid .row .col-auto .sidebar
+{
+    position:relative;
+    background: #2e4ead;
+    width: 240px;
+    height: calc(100vh - 60px);
+    border-bottom-left-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.container-fluid .row .col-auto .sidebar .hamburger{
+    width:70px;
+    height: 60px;
+    background: #2e4ead;
+    padding:15px 17px;
+    
+    cursor:pointer;
+}
+.container-fluid .row .col-auto .sidebar .hamburger div{
+    width:35px;
+    height:4px;
+    background: #92a6e2;
+    margin:5px 0;
+    border-radius: 5px;
+}
+.container-fluid .row .col-auto .sidebar ul
+{
+    margin:0px;
+    padding:0px;
+}
+.container-fluid .row .col-auto .sidebar ul li a{
+    display: block;
+    padding:20px;
+    color:#fff;
+    position:relative;
+    margin-bottom: 1px;    
+    white-space: nowrap;
+    overflow-wrap: break-word;
+    
+}
+.container-fluid .row .col-auto .main_container
+{
+    width: calc(100% - 254px);
+    height: calc(100% - 60px);
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+.container-fluid.myCollapse .row .col-auto .sidebar{
+    width:70px;
+    overflow: hidden;
+}
+.container-fluid.myCollapse .row .col-auto .sidebar ul li a{
+    text-align: center;
+}
+.container-fluid.myCollapse .row .col-auto .sidebar ul li a span.icon{
+    margin:0;
+}
+.container-fluid.myCollapse .row .col-auto .sidebar ul li a span.title
+{
+    display: none;
+}
+.container-fluid.myCollapse .row .col-auto .sidebar ul li .content
+{
+    display: none;
+}
+.container-fluid.myCollapse .row .col-auto .main_container{   
+    width: calc(100% - 70px);
+    height: calc(100% - 60px);
+    margin: 0px;
+    overflow-y: auto;
+    overflow-x:hidden;
+    position:absolute;
+    
+}
+
+/***online code for collapsible**/
+.myCollapsible {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  .content {
+    color: black;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+  }
+  /*** for download content**/
+  .card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+  }
+  /* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  .card .card-img-top
+  {
+      max-width: 200px;
+  }
+/* form content**/

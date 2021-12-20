@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&family=Prompt:wght@200&family=Zen+Old+Mincho&display=swap');
+*{    
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Zen Old Mincho', serif;
+}
+@media (max-width: 768px) {
+    body{
+        background: #e1ecf2;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding:0;
+        overflow: auto;
+    }
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+    .container-fluid .main_container
+{
+    width: 100vw;
+    height: calc(100vh - 80px);
+    top:10%;
+    left: 20%;
+    position: relative;      
+}
+
+}
+body{
+    background: #fff;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding:0;
+    overflow: auto;
+}
+.container-fluid .row .col-12 .navbar
+{   width: 100%;
+    min-height: 60px;
+    padding: 5px;
+    background-color: white;
+    top: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.container-fluid .row .col-12 .navbar .navbar-brand
+{   color: #2e4ead;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    display: inline-block;
+    padding-left: 10px;
+}
+.container-fluid .row .col-12 .navbar .navbar-collapse .navbar-nav li{   
+    margin: 2px 5px;
+    width: 120px;
+    color: darkblue;
+ }
+ .container-fluid .row .col-12 .navbar .navbar-collapse .navbar-nav li a{   
+    color: darkblue;
+ }
+ .container-fluid .row .col-12 .navbar .navbar-collapse .navbar-nav li .dropdown-menu
+ {
+    min-width: 100px;
+    text-decoration: none;
+    padding:0;
+ }
+ .container-fluid .row .col-12 .navbar .navbar-collapse .navbar-nav li .dropdown-menu .dropdown-item.active{   
+    background-color: skyblue;
+    
+    
+ }
+.container-fluid .main_container
+{
+width: 90vw;
+height: calc(100% - 80px);
+padding:5px;   
+
+      
+}
+.container-fluid  .main_container #kmuttBanner
+{
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 60%;
+padding-bottom: 10px;
+}
+.container-fluid  .main_container .card{
+background: #fff;
+margin-bottom: 10px;
+padding:20px;
+font-size: 12px;
+line-height: 22px;
+font-size: 1.5em;
+}
+
+h2{
+color: #6ec1e4;
+font-weight: 600;
+font-size: 16px;
+line-height: 22px;
+margin-bottom: 10px;
+}
+.fa{
+width: 40%;
+height: 50%;
+position: relative;
+display: inline;
+padding:10px;
+}
+.main_container .row .col-xs-6 .card .card-body .card-title
+{
+width: 40%;
+height: 50%;
+position: relative;
+display: inline;
+font-weight: bold;
+padding:5px;
+}
+.main_container .row .col-xs-6 .card .card-body .card-text{
+text-align: justify;
+text-justify: inter-word;
+padding-top: 5px;
+font-size: 1.0rem;
+}

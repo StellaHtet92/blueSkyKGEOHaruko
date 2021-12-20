@@ -1,0 +1,461 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Sky</title>
+    <!-- Bootstrap CSS CDN -->
+    <!--link:https://getbootstrap.com/docs/5.1/getting-started/introduction/ -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!--font awesome-->
+    <script src="https://kit.fontawesome.com/be439300a2.js" crossorigin="anonymous"></script>
+    <!--custom CSS-->
+    <link rel="stylesheet" href="{% static './lib/css/downloadsTest_Style.css' %}">      
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-md navbar-light bg-light">
+                    <a href="#" class="navbar-brand">
+                        <img class="mr-3" src="{% static '/images/KGEO_Logo.png' %}" width="120" height="40" alt="Logo">
+                        KGEO
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="mainMenu">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a href="{% url 'index' %}" class="nav-link">
+                                    <i class="fas fa-home"></i>&nbsp; <span class="title">Home</span>
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-download"></i>&nbsp; <span class="title">Downloads</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'aboutUsEng' %}" class="nav-link">
+                                    <i class="fas fa-address-card"></i>&nbsp;<span class="title">About Us</span>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <div class="no-style">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-globe"></i>&nbsp;Language
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item active" href="#">English</a>
+                                      <a class="dropdown-item" href="{% url 'downloadsThai' %}">Thai</a>
+                                    </div>
+                                </di>                               
+                            </li>
+                        </ul> 
+                    </div>
+                    <!--end of navbar-collapse class-->
+                </nav>
+                <!--end of navbar-->
+            </div>
+            <!--end of col-12-->
+           
+        </div>
+        <!--end of row-->
+        <div class="row">
+            <div class="col-auto">
+                <div class="sidebar">
+                    <div class="hamburger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <!--end of hamburger-->
+                    <ul>
+                        <li class="active">
+                            <a href="#" class="myCollapsible">
+                            <span class="icon"><i class="fas fa-filter" aria-hidden="true"></i></span>
+                            <span class="title">Search</span>
+                            </a>                   
+                                <div class="content">
+                                    <form class="px-4 py-3" id="myForm">
+                                          <!--<div class="form-group">-->
+                                            <label for="year-select">Choose Year:</label><br>
+                                            <select name="years" id="year-select" onchange="show()">
+                                                <option value="">----All----</option>
+                                                <option value="2024">2024</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                            </select>
+                                          <br>
+                                         
+                                          <!--</div>-->
+                                           <!--<div class="form-group">-->
+                                            <label for="month-select">Choose Month:</label><br>
+                                            <select name="months" id="month-select" onchange="showMonth()">
+                                                <option value="">--All--</option>
+                                                <option value="01">January</option>
+                                                <option value="02">February</option>
+                                                <option value="03">March</option>
+                                                <option value="04">April</option>
+                                                <option value="05">May</option>
+                                                <option value="06">June</option>
+                                                <option value="07">July</option>
+                                                <option value="08">August</option>
+                                                <option value="09">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
+                                            </select>
+                                            <hr>
+                                            <!--</div>-->
+                                    </form>
+                                   
+                                </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--end of side bar-->    
+            </div> 
+            <!--end of col-auto for sidebar-->
+            
+            <div class="col-auto">
+                <div class="main_container" id="main_container">
+                    <div class="row downloads">
+        
+                    </div>
+                </div>
+                <!--end of main content-->
+            </div> 
+            <!--end of col-auto for downloads content section-->           
+        </div>  
+        <!--end of row for downloads and sidebar content-->          
+    </div>
+    <!--end of container-fluid-->
+</body>
+</html>
+<!--jquery for date time filter-->
+<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script>
+     $(document).ready(function()
+        {
+            $(".hamburger").click(function()
+            {   
+                $(".container-fluid").toggleClass("myCollapse");
+            });
+        });
+    var coll = document.getElementsByClassName("myCollapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
+  
+    </script>
+    <!--<script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+        </script>-->
+<!--for google translate-->    
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!--bootstrap popper and javascript plugins link:https://getbootstrap.com/docs/5.1/getting-started/introduction/ -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<!--for creation of download content-->
+<script type="text/javascript" src="{% static './lib/js/contentGenerator.js' %}"></script>
+
+<script>    
+//original screen to show the images
+    {% if images %}
+        var count=0;
+	    {% for image in images %}
+		    //<img src="{{ MEDIA_URL }}images/{{ image }}" alt="{{ image }}">
+            
+            var src='{{ MEDIA_URL }}/Map/{{ image }}';
+            var imageName='{{ image }}'.split('.')[0];
+            console.log('Media','{{ MEDIA_URL }}','Image:',src,'Image Name:',imageName);
+            
+            $('.downloads').append(contentGenerator(imageName,imageName,'media/Map/{{ image }}'));
+           /* count=count+1;
+            if(count%6==0)
+            {
+                $('.main_container').append(` <div class="row">   
+                                    </div>`);
+            }*/
+	    {% endfor %}
+    {% else %}
+            console.log('Images does not exist:');
+                
+    {% endif %}    
+    //onchange function of select year
+   
+function show(){
+    var y=document.getElementById("year-select");
+    var year=y.options[y.selectedIndex].value;
+    var m=document.getElementById("month-select");
+    var month=m.options[m.selectedIndex].value;
+    console.log('Selected Year:');
+    console.log(year);
+    if(year === "" && month=== "")
+    {
+        {% if images %}
+            var count=0;
+            {% for image in images %}
+                //<img src="{{ MEDIA_URL }}images/{{ image }}" alt="{{ image }}">
+                
+                var src='{{ MEDIA_URL }}/Map/{{ image }}';
+                var imageName='{{ image }}'.split('.')[0];
+                console.log('Media','{{ MEDIA_URL }}','Image:',src,'Image Name:',imageName);
+                
+                $('.downloads').append(contentGenerator(imageName,imageName,'media/Map/{{ image }}'));
+            
+            {% endfor %}
+        {% endif %}
+    }
+    //end of year === "" && month=== ""
+    else if(year === "" && month !== "")//for year is all but month is selected
+    {
+        var imageFilter=[5];
+        imageFilter[1]="SPI_"+2020+"_"+month+"_01";
+        imageFilter[2]="SPI_"+2021+"_"+month+"_01";
+        imageFilter[3]="SPI_"+2022+"_"+month+"_01";
+        imageFilter[4]="SPI_"+2023+"_"+month+"_01";
+        imageFilter[5]="SPI_"+2024+"_"+month+"_01";
+        {% if images %}
+            var count=0;
+            {% for image in images %}
+                var src='{{ MEDIA_URL }}/Map/{{ image }}';
+                var imageName='{{ image }}'.split('.')[0];
+                console.log('Media','{{ MEDIA_URL }}','Image:',src,'Image Name:',imageName);
+                for(i=0;i<=imageFilter.length;i++)
+                {
+                    if(imageName === imageFilter[i])
+                    {
+                        if(count == 0)
+                        {
+                            //alert('count == 0');
+                            $('.downloads').html("");
+                           // alert('cleared');
+                            
+                        }
+                        $('.downloads').append(contentGenerator(imageName,imageName,'media/Map/{{ image }}'));
+                        count=count+1;
+                    }
+                    
+                }
+            
+    
+            {% endfor %}
+        {% endif %}
+    }
+    //end of year === "" && month!= ""
+    else
+    {
+        if(month === "")
+        {
+            var imageFilter=[12];
+            for (var i=0; i<=11;i++)
+            {
+                if(i<=8)
+                {
+                    imageFilter[i]="SPI_"+year+"_0"+(i+1)+"_01";
+                }
+                else
+                {
+                    imageFilter[i]="SPI_"+year+"_"+(i+1)+"_01";
+                }
+            
+                console.log(imageFilter[i]);
+            }
+        }
+        else{
+            var imageFilter=[1];
+            imageFilter[1]="SPI_"+year+"_"+month+"_01";
+        }
+       
+        {% if images %}
+            var count=0;
+            {% for image in images %}
+                var src='{{ MEDIA_URL }}/Map/{{ image }}';
+                var imageName='{{ image }}'.split('.')[0];
+                console.log('Media','{{ MEDIA_URL }}','Image:',src,'Image Name:',imageName);
+                for(i=0;i<=imageFilter.length;i++)
+                {
+                    if(imageName === imageFilter[i])
+                    {
+                        if(count == 0)
+                        {
+                            //alert('count == 0');
+                            $('.downloads').html("");
+                           // alert('cleared');
+                            
+                        }
+                        $('.downloads').append(contentGenerator(imageName,imageName,'media/Map/{{ image }}'));
+                        count=count+1;
+                    }
+                    
+                }
+            
+    
+            {% endfor %}
+            console.log('count');
+            console.log(count);
+            if(count==0)
+            {
+                alert("No matched images");
+            }   
+        {% endif %}  
+    }
+    //end of else where year is selected
+    
+}
+//end of show()
+//onchange function of select year
+
+function showMonth(){
+    var m=document.getElementById("month-select");
+    var month=m.options[m.selectedIndex].value;
+    var y=document.getElementById("year-select");
+    var year=y.options[y.selectedIndex].value;
+    console.log('Selected Month:');
+    console.log(month);
+    if(month === "" && year === "")
+    {
+        {% if images %}
+            var count=0;
+            {% for image in images %}
+                //<img src="{{ MEDIA_URL }}images/{{ image }}" alt="{{ image }}">
+                
+                var src='{{ MEDIA_URL }}/Map/{{ image }}';
+                var imageName='{{ image }}'.split('.')[0];
+                console.log('Media','{{ MEDIA_URL }}','Image:',src,'Image Name:',imageName);
+                
+                $('.downloads').append(contentGenerator(imageName,imageName,'media/Map/{{ image }}'));
+            
+            {% endfor %}
+        {% endif %}
+    }
+    //end of month === ""
+    else if( month ==="" && year !=="")
+    {
+        var imageFilterMonth=[12];
+            for (var i=0; i<=11;i++)
+            {
+                if(i<=8)
+                {
+                    imageFilterMonth[i]="SPI_"+year+"_0"+(i+1)+"_01";
+                }
+                else
+                {
+                    imageFilterMonth[i]="SPI_"+year+"_"+(i+1)+"_01";
+                }
+            
+                console.log(imageFilterMonth[i]);
+            }
+            {% if images %}
+                var countM=0;
+                {% for image in images %}
+                    var src='{{ MEDIA_URL }}/Map/{{ image }}';
+                    var imageName='{{ image }}'.split('.')[0];
+                    for(i=0;i<=imageFilterMonth.length;i++)
+                    {                           
+                        if(imageName === imageFilterMonth[i])
+                        {
+                           // alert('inside if loop of imagefiltermonth line 314');
+                            if(countM == 0)
+                            {
+                               // alert('count == 0 in month');
+                                $('.downloads').html("");
+                               // alert('cleared in month');
+                                
+                            }
+                            $('.downloads').append(contentGenerator(imageName,imageName,'media/Map/{{ image }}'));
+                            countM=countM+1;
+                        }
+                        
+                    }           
+                {% endfor %}
+            {% endif %}  
+    }
+    // for month is not selected by year is selected
+    else
+    {
+        //if there is no selected year value
+        if(year === "")
+        {
+            var imageFilterMonth=[5];
+            var i=0;
+            for(var j=2020;j<=2024;j++)
+            {
+            imageFilterMonth[i]="SPI_"+j+"_"+month+"_01";
+            console.log("--------for all years ---------")
+            console.log(imageFilterMonth[i]);
+            i=i+1;
+            }
+            //end of foor loop j
+        }
+        else
+        {
+            var imageFilterMonth=[1];
+            imageFilterMonth[1]="SPI_"+year+"_"+month+"_01";
+            console.log("--------for selected years ---------")
+            console.log(imageFilterMonth[1]);
+        }
+        console.log('length of imageFilterMonth');
+        console.log(imageFilterMonth.length);
+        
+        {% if images %}
+            var countM=0;
+            {% for image in images %}
+                var src='{{ MEDIA_URL }}/Map/{{ image }}';
+                var imageName='{{ image }}'.split('.')[0];
+               // console.log('Media','{{ MEDIA_URL }}','Image:',src,'Image Name:',imageName);
+                
+                for(i=0;i<=imageFilterMonth.length;i++)
+                {                           
+                    if(imageName === imageFilterMonth[i])
+                    {
+                       // alert('inside if loop of imagefiltermonth line 314');
+                        if(countM == 0)
+                        {
+                           // alert('count == 0 in month');
+                            $('.downloads').html("");
+                           // alert('cleared in month');
+                            
+                        }
+                        $('.downloads').append(contentGenerator(imageName,imageName,'media/Map/{{ image }}'));
+                        countM=countM+1;
+                    }
+                    
+                }
+            
+    
+            {% endfor %}
+            console.log('count');
+            console.log(count);
+            if(count==0)
+            {
+                alert("No matched images");
+            }   
+        {% endif %}  
+    }
+    
+}
+//end of show()
+</script>

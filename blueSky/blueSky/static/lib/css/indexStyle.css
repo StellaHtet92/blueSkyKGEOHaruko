@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&family=Prompt:wght@200&family=Zen+Old+Mincho&display=swap');
+*{    
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Zen Old Mincho', serif;
+}
+body{
+    background: white;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding:0;
+    overflow: hidden;
+}
+.container-fluid .row .col-12 .navbar
+{   width: 100%;
+    min-height: 60px;
+    padding: 5px;
+    background-color: white;
+    top: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.container-fluid .row .col-12 .navbar .navbar-brand
+{
+    color: #2e4ead;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    display: inline-block;
+    padding-left: 10px;
+}
+.container-fluid .row .col-12 .navbar .navbar-collapse .navbar-nav li{   
+    margin: 2px 5px;
+    width: 120px;
+    color: darkblue;
+ }
+ .container-fluid .row .col-12 .navbar .navbar-collapse .navbar-nav li a{   
+    color: darkblue;
+ }
+ .container-fluid .row .col-12 .navbar .navbar-collapse .navbar-nav li .dropdown-menu
+ {
+    min-width: 100px;
+    text-decoration: none;
+    padding:0;
+ }
+ .container-fluid .row .col-12 .navbar .navbar-collapse .navbar-nav li .dropdown-menu .dropdown-item.active{   
+    background-color: skyblue;
+    
+    
+ } 
+.container-fluid .row .col-auto .sidebar
+{
+    position:relative;
+    background: #2e4ead;
+    width: 260px;
+    height: calc(100vh - 60px);
+    border-bottom-left-radius: 20px;
+    margin-left: 14px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+.container-fluid .row .col-auto .sidebar .hamburger{
+    width:70px;
+    height: 60px;
+    background: #2e4ead;
+    padding:15px 17px;
+    cursor:pointer;
+}
+.container-fluid .row .col-auto .sidebar .hamburger div{
+    width:35px;
+    height:4px;
+    background: #92a6e2;
+    margin:5px 0;
+    border-radius: 5px;
+}
+.container-fluid .row .col-auto .sidebar ul
+{
+    margin:0px;
+    padding:0px;
+}
+.container-fluid .row .col-auto .sidebar ul li a{
+    display: block;
+    padding:20px;
+    color:#fff;
+    position:relative;
+    margin-bottom: 1px;    
+    white-space: nowrap;
+    overflow-wrap: break-word;
+    
+}
+.layer-card
+{
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.15);
+    display: block;
+    padding:20px;
+    color:#fff;
+    position:relative;
+    margin-bottom: 1px;
+    color:#92a6e2;
+    white-space: nowrap;
+}
+.container-fluid .row .col-auto .sidebar ul li a:before{
+    content: "";
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: #92a6e2;
+    display: none;
+}
+.container-fluid .row .col-auto .sidebar ul li a span.icon{
+    margin-right: 15px;
+   
+}
+.container-fluid .row .col-auto .sidebar ul li a span.title{
+    
+    margin-left: 15px;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+.container-fluid .row .col-auto .sidebar ul li a:hover,
+.container-fluid .row .col-auto .sidebar ul li a.active{
+    background: #4360b5;
+    color: #fff;
+}
+.container-fluid .row .col-auto .sidebar ul li a:hover:before,
+.container-fluid .row .col-auto .sidebar ul li a.active:before{
+    display: block;
+}
+
+.container-fluid .row .col-auto .main_container
+{
+    width: calc(100vw - 274px);
+    height: calc(100vh - 80px);
+    position: absolute;
+    transition: all 0.3s ease;
+      
+}
+.container-fluid .row .col-auto
+{
+    position: relative;
+    padding: 0px;
+}
+.container-fluid .row .col-auto .main_container #map{
+    width: 100%;
+    height: 100%;       
+}
+
+.container-fluid.myCollapse .row .col-auto .sidebar{
+    width:70px;
+    overflow-y: hidden;
+}
+.container-fluid.myCollapse .row .col-auto .sidebar ul li a{
+    text-align: center;
+}
+.container-fluid.myCollapse .row .col-auto .sidebar ul li a span.icon{
+    margin:0;
+}
+.container-fluid.myCollapse .row .col-auto .sidebar ul li a span.title
+{
+    display: none;
+}
+
+.container-fluid.myCollapse .row .col-auto .main_container{
+    width: calc(100vw - 94px);
+    height: calc(100vh - 60px);
+    position:absolute;
+}
+.container-fluid.myCollapse .row .col-auto .main_container #map{
+    width: 100%;
+    height: 100%;
+    
+}
+.container-fluid.myCollapse .row .col-auto .sidebar .list-unstyled
+{
+    display: none;
+}
+
+.container-fluid .row .col-auto .main_container #map .legend
+{
+    position:absolute;
+    display: block;
+    bottom:15px;    
+    right:40px;
+    background-color: #fff;
+    transition: margin-right 0.55s;
+    max-width: 200px;
+    max-height: 400px;
+    overflow-y:auto;
+}
+/***online code for collapsible**/
+.myCollapsible {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  .content {
+    background-color: whitesmoke;
+    color: #4360b5;
+    padding: 0 0px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+
+  }
+  /*************************************************************************************/
+  /*for css of geojson label*/
+  .leaflet-tooltip.my-labels {
+    background-color: transparent;
+    border: transparent;
+    box-shadow: none;
+    }
